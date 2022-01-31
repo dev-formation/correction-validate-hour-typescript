@@ -33,7 +33,7 @@ FORM.addEventListener('submit', function (e) {
     console.log(e);
     for (const element of listElement) {
         cleanClassList(element);
-        if(validate(element) === undefined) {
+        if(validate(element.value) === undefined) {
             ERROR_MSG.classList.remove('invisible');
         } else {
             ERROR_MSG.classList.add('invisible');
