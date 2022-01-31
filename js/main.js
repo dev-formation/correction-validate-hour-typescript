@@ -39,7 +39,7 @@ FORM.addEventListener('submit', function (e) {
             ERROR_MSG.classList.add('invisible');
         }
         
-        if(validate(element)) {
+        if(validate(element.value)) {
             
             element.classList.add('is-valid')
         } else {
