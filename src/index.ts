@@ -14,7 +14,7 @@ function validate() {}
 const FORM = document.querySelector('form');
 // const INPUT_START = document.querySelector('#startRdv');
 // const INPUT_END = document.querySelector('#endRdv');
-// const ERROR_MSG = document.querySelector('#error');
+const ERROR_MSG = document.querySelector('#error');
 // const listElement = [INPUT_START, INPUT_END];
 
 FORM?.addEventListener('submit', function (e: SubmitEvent) {
@@ -33,9 +33,9 @@ FORM?.addEventListener('submit', function (e: SubmitEvent) {
   for (const input of listInput) {
     cleanClassList(input);
     if (validate(input.value) === undefined) {
-      CURRENT_FORM.errorElement.classList.remove('invisible');
+      ERROR_MSG?.classList.remove('invisible');
     } else {
-      CURRENT_FORM.errorElement.classList.add('invisible');
+      ERROR_MSG?.classList.add('invisible');
     }
 
     if (validate(input.value)) {
