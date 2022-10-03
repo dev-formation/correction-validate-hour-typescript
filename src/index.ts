@@ -75,6 +75,8 @@ FORM?.addEventListener('submit', function (e: SubmitEvent) {
 
   for (const input of listInput) {
     cleanClassList(input);
+    console.log('input', input);
+    console.log("valeur de l'input", input.value);
     if (validate(input.value) === undefined) {
       ERROR_MSG?.classList.remove('invisible');
     } else {
