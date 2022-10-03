@@ -2,7 +2,50 @@
  * Completer cette fonction
  *
  */
-function validate() {}
+function validate(timeToValidate: string): boolean {
+  if (timeToValidate.length == 5) {
+    const timeArray: string[] = timeToValidate.split(':');
+    if (timeArray.length == 2) {
+      const hours: number = parseInt(timeArray[0]);
+      const minutes: number = parseInt(timeArray[1]);
+      if (hours !== NaN && minutes !== NaN) {
+        if (hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60) {
+          return true;
+        } else {
+          console.log(
+            'Les heures sont comprises entre 0 et 23 et les minutes entre 0 et 59'
+          );
+          return false;
+        }
+      } else {
+        console.log('Les heures et minutes doivent être des nombres');
+        return false;
+      }
+    } else {
+      console.log("Le séparateur des heures et minutes doit être ':'");
+      return false;
+    }
+  } else {
+    console.log("Le format de l'heure doit avoir 5 caractères");
+    return false;
+  }
+
+  /**
+   * Format concis
+   */
+  // if (timeToValidate.length == 5) {
+  //   const timeArray: string[] = timeToValidate.split(':');
+  //   if (timeArray.length == 2) {
+  //     const hours: number = parseInt(timeArray[0]);
+  //     const minutes: number = parseInt(timeArray[1]);
+  //     if (hours >= 0 && hours < 24 && minutes >= 0 && minutes < 60) {
+  //       return true;
+  //     }
+  //   }
+  // }
+  // console.log('Format incorrect, il est attendu :  HH:MM')
+  // return false;
+}
 
 /******************************************************
  * LE CODE CI-DESSOUS FAIT FONCTIONNER LA PAGE TU PEUX
